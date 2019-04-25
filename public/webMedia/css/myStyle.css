@@ -1,0 +1,22 @@
+.footerBackground{
+   background-color: rebeccapurple;
+    
+    
+}
+.bodyBackground{
+   background-color: mediumpurple;
+}
+.section-shaped{
+        background: linear-gradient(150deg, #7a93e6 15%, #cc30ff8f 70%, #372ebd 94%);
+}
+.balls  {
+    width: 100%;
+    
+}
+
+.artCoin{
+    
+}
+.wellBox {
+    color :black;
+}
