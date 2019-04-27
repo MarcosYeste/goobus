@@ -1,6 +1,6 @@
 
-  <header class="header-global">
-    <nav id="navbar-main" class="navbar navbar-main navbar-expand-lg navbar-transparent navbar-light headroom">
+  <header class="header-global ">
+    <nav id="navbar-main" class="navbar navbar-main navbar-expand-lg navbar-transparent navbar-light headroom ">
       <div class="container">
         <a class="navbar-brand mr-lg-5" href="{{ URL('/home') }}">
           <img src="webMedia/img/brand/temp_brand.jpg">

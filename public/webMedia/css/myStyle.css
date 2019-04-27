@@ -1,16 +1,15 @@
-.footerBackground{
-   background-color: rebeccapurple;
-    
-    
-}
+
 .bodyBackground{
    background-color: mediumpurple;
 }
 .section-shaped{
-        background: linear-gradient(150deg, #7a93e6 15%, #cc30ff8f 70%, #372ebd 94%);
+        /* background: linear-gradient(150deg, #7a93e6 15%, #cc30ff8f 70%, #372ebd 94%); */
+    background: linear-gradient(150deg, purple 15%, #cc30ff8f 70%, #cc30ff8f 94%);
 }
-.balls  {
-    width: 100%;
+.balls img {
+    width: 170%;
+    height: auto;
+    position: absolute;
     
 }
 
@@ -18,5 +17,19 @@
     
 }
 .wellBox {
-    color :black;
+    border: 5px solid red;
+    
+}
+/* Header */
+.headIcons{
+    height: auto;
+    
+}
+
+
+/* footer */
+.footerBackground{
+   background-color: rebeccapurple;
+    
+    
 }
