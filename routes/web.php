@@ -21,9 +21,9 @@ Route::get('home','ArtWebController@index');
 //Route::resource('person','PersonController');
 Route::post('artweb','ArtWebController@secondIndex');
 Route::get('login', 'PersonController@login');
-Route::post('login', 'PersonController@sign');
+Route::post('login', 'PersonController@sign');// Molaria ponerle un Name para que en la URL no saliera login cuando te manda a la pagina principal
 Route::get('register', 'PersonController@create');
-Route::post('register', 'PersonController@store');
+Route::post('register', 'PersonController@store'); // Molaria ponerle un Name para que en la URL no saliera regitro
 /*
 Route::get('/clear-cache', function() {
     Artisan::call('cache:clear');

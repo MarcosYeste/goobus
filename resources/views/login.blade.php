@@ -14,16 +14,7 @@
     @include('fooAndHead.headerWelcome')
     <main>
         <section class="section section-shaped section-lg bodyBackground">
-            <div class="shape shape-style-1 bg-gradient-default">
-                <span></span>
-                <span></span>
-                <span></span>
-                <span></span>
-                <span></span>
-                <span></span>
-                <span></span>
-                <span></span>
-            </div>
+          @include('resources.ballsImage')
             <div class="container pt-lg-md">
                 <div class="row justify-content-center">
                     <div class="col-lg-5">
@@ -87,7 +78,7 @@
                                 </a>
                             </div>
                             <div class="col-6 text-right">
-                                <a href="#" class="text-light">
+                                <a href="{{ URL('register') }}" class="text-light">
                                     <small>Crear una cuenta nueva</small>
                                 </a>
                             </div>

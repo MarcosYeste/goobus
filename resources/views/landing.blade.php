@@ -16,25 +16,15 @@
         <div class="position-relative">
             <!-- shape Hero -->
             <section class="section section-lg section-shaped pb-250">
-                <div class="shape shape-style-1 shape-default">
-                    <span></span>
-                    <span> </span>
-                    <span> </span>
-                    <span> </span>
-                    <span> </span>
-                    <span> </span>
-                    <span> </span>
-                    <span> </span>
-                    <span> </span>
-                </div>
+                @include('resources.ballsImage')
                 <div class="container py-lg-md d-flex">
                     <div class="col px-0">
                         <div class="row">
                             <div class="col-lg-6">
-                                <h1 class="display-3  text-white">A beautiful Design System
-                                    <span>completed with examples</span>
+                                <h1 class="display-3  text-white">BIENVENIDO ART COINS WEB
+                                    <span>El lugar donde conseguir dinero fresco</span>
                                 </h1>
-                                <p class="lead  text-white">The design system comes with four pre-built pages to help you get started faster. You can change the text and images and you're good to go.</p>
+                                <p class="lead  text-white">Puedes ganar coins en la seccion de anuncios y comprar arte digital en la sección Art</p>
                                 <div class="btn-wrapper">
                                     <a href="https://demos.creative-tim.com/argon-design-system/docs/components/alerts.html" class="btn btn-info btn-icon mb-3 mb-sm-0">
                                         <span class="btn-inner--icon"><i class="fa fa-code"></i></span>

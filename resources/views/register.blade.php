@@ -14,16 +14,7 @@
     @include('fooAndHead.headerWelcome')
     <main>
         <section class="section section-shaped section-lg">
-            <div class="shape shape-style-1 bg-gradient-default">
-                <span></span>
-                <span></span>
-                <span></span>
-                <span></span>
-                <span></span>
-                <span></span>
-                <span></span>
-                <span></span>
-            </div>
+           @include('resources.ballsImage')
             <div class="container pt-lg-md">
                 <div class="row justify-content-center">
                     <div class="col-lg-5">
@@ -51,7 +42,7 @@
                                 <div class="text-center text-muted mb-4">
                                     <small>Or sign up with credentials</small>
                                 </div>
-                                <form class="form-inline " role="form" action="{{action('PersonController@store')}}" method="get">
+                                <form class="form-inline " role="form" action="{{action('PersonController@store')}}" method="post">
                                     <div class="form-group">
                                         <div class="input-group input-group-alternative mb-3">
                                             <div class="input-group-prepend">
@@ -94,7 +85,7 @@
                                         </div>
                                     </div>
                                     <div class="text-center">
-                                        <button type="button" class="btn btn-primary mt-4">Create account</button>
+                                        <button type="submit" class="btn btn-primary mt-4">Create account</button>
                                     </div>
                                 </form>
                             </div>
