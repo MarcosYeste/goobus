@@ -6,7 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     <meta name="description" content="Start your development with a Design System for Bootstrap 4.">
     <meta name="author" content="Creative Tim">
-    <title>Argon Design System - Free Design System for Bootstrap 4</title>
+    <title>Art Coins Web</title>
     @include('links.headLinks')
 </head>
 
@@ -16,7 +16,6 @@
         <div class="position-relative">
             <!-- shape Hero -->
             <section class="section section-lg section-shaped pb-250">
-                @include('resources.ballsImage')
                 <div class="container py-lg-md d-flex">
                     <div class="col px-0">
                         <div class="row">
@@ -59,14 +58,9 @@
                                         <div class="icon icon-shape icon-shape-primary rounded-circle mb-4">
                                             <i class="ni ni-check-bold"></i>
                                         </div>
-                                        <h6 class="text-primary text-uppercase">Download Argon</h6>
-                                        <p class="description mt-3">Argon is a great free UI package based on Bootstrap 4 that includes the most important components and features.</p>
-                                        <div>
-                                            <span class="badge badge-pill badge-primary">design</span>
-                                            <span class="badge badge-pill badge-primary">system</span>
-                                            <span class="badge badge-pill badge-primary">creative</span>
-                                        </div>
-                                        <a href="#" class="btn btn-primary mt-4">Learn more</a>
+                                        <h6 class="text-primary text-uppercase">¿Como ganar Art-coins?</h6>
+                                        <p class="description mt-3">En este video te explicamos como ganar Art-Coins para comprar productos</p>
+                                        <a href="#" class="btn btn-primary mt-4">Visualizar video</a>
                                     </div>
                                 </div>
                             </div>
@@ -76,14 +70,9 @@
                                         <div class="icon icon-shape icon-shape-success rounded-circle mb-4">
                                             <i class="ni ni-istanbul"></i>
                                         </div>
-                                        <h6 class="text-success text-uppercase">Build Something</h6>
-                                        <p class="description mt-3">Argon is a great free UI package based on Bootstrap 4 that includes the most important components and features.</p>
-                                        <div>
-                                            <span class="badge badge-pill badge-success">business</span>
-                                            <span class="badge badge-pill badge-success">vision</span>
-                                            <span class="badge badge-pill badge-success">success</span>
-                                        </div>
-                                        <a href="#" class="btn btn-success mt-4">Learn more</a>
+                                        <h6 class="text-success text-uppercase">¿Como comprar o vender arte?</h6>
+                                        <p class="description mt-3">En este video te explicamos como comprar y vender tus productos artisticos</p>
+                                        <a href="#" class="btn btn-success mt-4">Visualizar video</a>
                                     </div>
                                 </div>
                             </div>
@@ -93,14 +82,9 @@
                                         <div class="icon icon-shape icon-shape-warning rounded-circle mb-4">
                                             <i class="ni ni-planet"></i>
                                         </div>
-                                        <h6 class="text-warning text-uppercase">Prepare Launch</h6>
-                                        <p class="description mt-3">Argon is a great free UI package based on Bootstrap 4 that includes the most important components and features.</p>
-                                        <div>
-                                            <span class="badge badge-pill badge-warning">marketing</span>
-                                            <span class="badge badge-pill badge-warning">product</span>
-                                            <span class="badge badge-pill badge-warning">launch</span>
-                                        </div>
-                                        <a href="#" class="btn btn-warning mt-4">Learn more</a>
+                                        <h6 class="text-warning text-uppercase">¿Como retirar tu dinero?</h6>
+                                        <p class="description mt-3">En este video te explicamos como retirar tu dinero acumulado.</p>
+                                        <a href="#" class="btn btn-warning mt-4">Visualizar video</a>
                                     </div>
                                 </div>
                             </div>

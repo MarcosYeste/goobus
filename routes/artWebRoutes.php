@@ -18,15 +18,10 @@ Route::get('/', function () {
 */
 Route::resource('/','ArtWebController');
 Route::get('home','ArtWebController@index');
-//Route::resource('person','PersonController');
 Route::post('artweb','ArtWebController@secondIndex');
-Route::get('login', 'PersonController@login');
-Route::post('login', 'PersonController@sign');// Molaria ponerle un Name para que en la URL no saliera login cuando te manda a la pagina principal
-Route::get('register', 'PersonController@create');
-Route::post('register', 'PersonController@store'); // Molaria ponerle un Name para que en la URL no saliera regitro
 Route::get('contact', 'ArtWebController@contact');
-Route::get('privacidad', 'ArtWebController@politicaPrivacidad');
-Route::get('cookies', 'ArtWebController@politicaCookies');
+
+
 
 /*
 Route::get('/clear-cache', function() {

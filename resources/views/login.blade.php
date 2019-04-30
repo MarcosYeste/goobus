@@ -14,7 +14,6 @@
     @include('fooAndHead.headerWelcome')
     <main>
         <section class="section section-shaped section-lg bodyBackground">
-          @include('resources.ballsImage')
             <div class="container pt-lg-md">
                 <div class="row justify-content-center">
                     <div class="col-lg-5">

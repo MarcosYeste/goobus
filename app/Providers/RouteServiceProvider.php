@@ -36,8 +36,9 @@ class RouteServiceProvider extends ServiceProvider
     public function map()
     {
         $this->mapApiRoutes();
-
         $this->mapWebRoutes();
+        //$this->mapArtWebRoutes();
+        //$this->mapPersonRoutes();
 
         //
     }
@@ -70,4 +71,18 @@ class RouteServiceProvider extends ServiceProvider
              ->namespace($this->namespace)
              ->group(base_path('routes/api.php'));
     }
+   /* 
+    protected function mapArtWebRoutes()
+    {
+        Route::middleware('web')
+             ->namespace('goobus\app\Http\Controllers')
+             ->group(base_path('routes/artWeb.php'));
+    }
+      protected function mapPersonRoutes()
+    {
+        Route::middleware('web')
+             ->namespace('goobus\app\Http\Controllers')
+             ->group(base_path('routes/personRoutes.php'));
+    }
+    */
 }

@@ -35,10 +35,13 @@
               <a href="https://www.creative-tim.com" class="nav-link" target="_blank">Creative Tim</a>
             </li>
             <li class="nav-item">
-              <a href="https://www.creative-tim.com/presentation" class="nav-link" target="_blank">About Us</a>
+              <a href="{{ URL('contact') }}" class="nav-link" target="_blank">Soporte técnico</a>
             </li>
             <li class="nav-item">
-              <a href="http://blog.creative-tim.com" class="nav-link" target="_blank">Blog</a>
+              <a href="{{ URL('privacidad') }}" class="nav-link" target="_blank">Politica de privacidad</a>
+            </li>
+               <li class="nav-item">
+              <a href="{{ URL('cookies') }}" class="nav-link" target="_blank">Politica de cookies</a>
             </li>
             <li class="nav-item">
               <a href="https://github.com/creativetimofficial/argon-design-system/blob/master/LICENSE.md" class="nav-link" target="_blank">MIT License</a>

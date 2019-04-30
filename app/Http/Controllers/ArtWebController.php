@@ -14,24 +14,35 @@ class ArtWebController extends Controller
      */
     public function index()
     {
-        Log::debug('Index');
          return view("bienvenido");
     }
       public function login()
     {
-           Log::debug('login');
          return view('login');//("bienvenido");
     }
     
       public function secondIndex()
     {
-           Log::debug('secondIndex');
          return view('landing');//("bienvenido");
     }
        public function registro()
     {
-            Log::debug('registro');
          return view('register');//("bienvenido");
+    }
+       public function contact()
+    {
+           
+         return view('info.contact');//("bienvenido");
+    }
+       public function privacity()
+    {
+           
+         return view('info.politicaPrivacidad');//("bienvenido");
+    }
+       public function cookies()
+    {
+           
+         return view('info.politicaCookies');//("bienvenido");
     }
 
     /**

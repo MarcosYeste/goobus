@@ -6,7 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     <meta name="description" content="Start your development with a Design System for Bootstrap 4.">
     <meta name="author" content="Creative Tim">
-    <title>Argon Design System - Free Design System for Bootstrap 4</title>
+    <title>Register</title>
     @include('links.headLinks')
 </head>
 
@@ -14,7 +14,6 @@
     @include('fooAndHead.headerWelcome')
     <main>
         <section class="section section-shaped section-lg">
-           @include('resources.ballsImage')
             <div class="container pt-lg-md">
                 <div class="row justify-content-center">
                     <div class="col-lg-5">
@@ -48,6 +47,7 @@
                                             <div class="input-group-prepend">
                                                 <span class="input-group-text"><i class="ni ni-hat-3"></i></span>
                                             </div>
+                                           
                                             <input class="form-control" placeholder9="Name" type="text">
                                         </div>
                                     </div>

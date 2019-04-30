@@ -16,7 +16,6 @@
         <div class="position-relative">
             <!-- shape Hero -->
             <section class="section section-lg section-shaped pb-250">
-                @include('resources.ballsImage')
                 <div class="container py-lg-md d-flex">
                     <div class="col px-0">
                         <div class="row">
