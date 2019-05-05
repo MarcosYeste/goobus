@@ -15,6 +15,10 @@ class ProductController extends Controller
     {
         //
     }
+        public function showMyProducts()
+    {
+        return view('profile.icons');
+    }
 
     /**
      * Show the form for creating a new resource.

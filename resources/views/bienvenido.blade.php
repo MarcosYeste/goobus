@@ -108,7 +108,7 @@
         </section>
 
     </main>
-    @include('fooAndHead.footer')
+        @include('fooAndHead.footer')
     @include('links.footLinks')
 </body>
 

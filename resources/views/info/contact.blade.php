@@ -11,7 +11,7 @@
 </head>
 
 <body>
-    @include('fooAndHead.headerWeb') 
+    @include('fooAndHead.headerUser') 
     <main>
         <section class="section section-lg bg-gradient-secondary">
             <div class="container pt-lg pb-300">

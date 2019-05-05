@@ -42,13 +42,14 @@
                                     <small>Or sign up with credentials</small>
                                 </div>
                                 <form class="form-inline " role="form" action="{{action('PersonController@store')}}" method="post">
+                                     @csrf
                                     <div class="form-group">
                                         <div class="input-group input-group-alternative mb-3">
                                             <div class="input-group-prepend">
                                                 <span class="input-group-text"><i class="ni ni-hat-3"></i></span>
                                             </div>
                                            
-                                            <input class="form-control" placeholder9="Name" type="text">
+                                            <input class="form-control" placeholder="Nickname" name="nickname" type="text">
                                         </div>
                                     </div>
                                     <div class="form-group">
@@ -56,7 +57,7 @@
                                             <div class="input-group-prepend">
                                                 <span class="input-group-text"><i class="ni ni-email-83"></i></span>
                                             </div>
-                                            <input class="form-control" placeholder="Email" type="email">
+                                            <input class="form-control" placeholder="Email" name="email" type="email">
                                         </div>
                                     </div>
                                     <div class="form-group">
@@ -64,7 +65,7 @@
                                             <div class="input-group-prepend">
                                                 <span class="input-group-text"><i class="ni ni-lock-circle-open"></i></span>
                                             </div>
-                                            <input class="form-control" placeholder="Password" type="password">
+                                            <input class="form-control" placeholder="Password" name="user_pass" type="password">
                                         </div>
                                     </div>
                                     <div class="text-muted font-italic">

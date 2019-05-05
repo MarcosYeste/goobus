@@ -12,7 +12,7 @@
 
 <body>
     @if(1 == 1)
-        @include('fooAndHead.headerWeb')
+        @include('fooAndHead.headerUser')
     @else
         @include('fooAndHead.headerWelcome')
     @endif

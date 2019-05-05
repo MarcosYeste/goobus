@@ -42,12 +42,13 @@
                                     <small>O inicia con tus credenciales</small>
                                 </div>
                                 <form role="form" action="{{action('PersonController@sign')}}" method="post">
+                                    @csrf
                                     <div class="form-group mb-3">
                                         <div class="input-group input-group-alternative">
                                             <div class="input-group-prepend">
                                                 <span class="input-group-text"><i class="ni ni-email-83"></i></span>
                                             </div>
-                                            <input class="form-control" placeholder="Correo Electronico" type="email">
+                                            <input class="form-control" name="nickname" placeholder="Nickname" type="text">
                                         </div>
                                     </div>
                                     <div class="form-group">
@@ -55,7 +56,7 @@
                                             <div class="input-group-prepend">
                                                 <span class="input-group-text"><i class="ni ni-lock-circle-open"></i></span>
                                             </div>
-                                            <input class="form-control" placeholder="Escribir contraseña" type="password">
+                                            <input class="form-control" name="user_pass" placeholder="Escribir contraseña" type="password">
                                         </div>
                                     </div>
                                     <div class="custom-control custom-control-alternative custom-checkbox">

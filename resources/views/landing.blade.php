@@ -11,7 +11,7 @@
 </head>
 
 <body>
-    @include('fooAndHead.headerWeb')
+    @include('fooAndHead.headerUser')
     <main>
         <div class="position-relative">
             <!-- shape Hero -->

@@ -4,6 +4,7 @@ namespace goobus\Http\Controllers;
 
 use Illuminate\Http\Request;
 use Log;
+use Session;
 
 class ArtWebController extends Controller
 {
@@ -44,6 +45,27 @@ class ArtWebController extends Controller
            
          return view('info.politicaCookies');//("bienvenido");
     }
+    
+    
+    public function artCoinWeb()
+{ 
+    if (Session::has('user') && Session::has('person')) {
+        
+        $user = Session::get('user');
+        $person = Session::get('person');
+        return view('landing',compact('user','person')); 
+   
+     }else{
+        // aqui deberia ir un error de session expirada o algo
+        return view('login');
+    }
+    
+}
+public function logout()
+{ 
+    Session::flush();
+    return view('bienvenido');
+}
 
     /**
      * Show the form for creating a new resource.
