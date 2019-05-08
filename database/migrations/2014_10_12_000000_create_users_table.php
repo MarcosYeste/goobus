@@ -18,8 +18,8 @@ class CreateUsersTable extends Migration
             $table->string('nickname');
             $table->string('user_pass');
             $table->string('email');
-            $table->string('rol');
-            $table->date('lastUpdate');
+            $table->string('rol')->default("user");
+            $table->date('lastUpdate')->default(date('Y-m-d H:i:s'));
             $table->rememberToken();
             $table->timestamps();
         });

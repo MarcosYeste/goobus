@@ -5,6 +5,8 @@ namespace goobus\Http\Controllers;
 use Illuminate\Http\Request;
 use Log;
 use Session;
+use Storage;
+use Image;
 
 class PersonController extends Controller
 {
@@ -27,9 +29,11 @@ return view('login');
 public function profile(Request $request)
 { 
     $user = $request->session()->get('user');
-    $person = $request->session()->get('person');
-   // Log::debug('$user: '.$user->nickname);
-    return view('profile.user',compact('user','person'));
+    $person = $request->session()->get('person');  
+    $avatar = "../storage/avatar/images/".$person->avatar;
+    
+   // $avatar = Storage::disk('avatar')->get($person->avatar);
+    return view('profile.user',compact('user','person','avatar'));
 }
     
 public function sign(Request $request){ // ESTE METODO ES PARA COMPROBAR EL USUARIO EN EL LOGIN
@@ -76,21 +80,9 @@ $user= new \goobus\User;
 $user->nickname = $request->input('nickname');
 $user->email = $request->input('email');
 $user->user_pass = $request->input('user_pass');
-$user->rol = "admin";
-$user->lastUpdate = date('Y-m-d H:i:s');
 $user->save();   
-   
-    
+       
 $person = new \goobus\Person;
-$person->name = "Marcos";
-$person->lastname = "Yeste Molino";
-$person->address = "C/Montblanc";
-$person->country = "Francia";
-$person->cp = "43006";
-$person->description = "";
-$person->phone = "691122254";
-$person->artcoins = 400;
-$person->money =10;
 $person->user_id = $user->id;
 $person->save();
     
@@ -149,10 +141,19 @@ $person->lastname =$request->input('lastname');
 $person->address = $request->input('address');
 $person->country = $request->input('country');
 $person->cp = $request->input('cp');
-$person->phone = $request->input('phone');
+$person->phone = $request->input('phone');    
 $person->description = $request->input('description');
-$person->save();
+
+ if($request->file('avatar') != ""){//Si esta vacio no genero ni guardo foto
+     
+    $image = $request->file('avatar'); 
+    $imagedesc = $request->input('nickname')."."."jpg"; 
+    $person->avatar = $imagedesc;
+    Storage::disk('avatar')->putFileAs('images', $image, $imagedesc);
+        
+ }
     
+$person->save();    
 Session::put('user', $user);
 Session::put('person', $person);
     

@@ -1,4 +1,4 @@
-<footer class="footer has-cards">
+<footer class="footer has-cards myFooter">
   
     <div class="container">
       <div class="row row-grid align-items-center my-md">

@@ -1,5 +1,5 @@
 <header class="header-global">
-    <nav class="navbar fixed-top navbar-expand-lg navbar-dark bg-purple" id="navbar1">
+    <nav class="navbar fixed-top navbar-expand-lg navbar-dark bg-purple escala" id="navbar1">
             <div class="container">
                 <a class="navbar-brand mr-lg-5" href="{{ URL('/home') }}">
                     <img src="webMedia/img/brand/temp_brand.jpg">

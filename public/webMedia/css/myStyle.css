@@ -1,10 +1,11 @@
 
 .bodyBackground{
-   background-color: mediumpurple;
+   background-color: lightsteelblue;
 }
 .section-shaped{
         /* background: linear-gradient(150deg, #7a93e6 15%, #cc30ff8f 70%, #372ebd 94%); */
-    background: linear-gradient(150deg, #A050CC 15%, #cc30ff8f 70%, #cc30ff8f 94%);
+    /* background: linear-gradient(0deg, lightsteelblue 25%, #655999 75%); */
+    background-image:url("http://api.thumbr.it/whitenoise-361x370.png?"); 
 }
 
 
@@ -39,8 +40,13 @@
     
 }
 
+.myShadow
+{
+    box-shadow: 1rem 0rem 2rem 0rem #655999 !important;
+}
+
 .bg-purple{    
-    background-color: purple !important;
+    background-color:  #655999 !important;
 }
 
 .no-bottom{    
@@ -52,19 +58,29 @@
 }
 
 .text-gold{
-    color: gold;
+    color: lightsteelblue;
 }
 
 .text-gold:hover{
-    color: plum;
+    color: gold;
+}
+
+.paddingButton{
+    margin-top: 25%;
+    padding-bottom: 40%; 
+    padding-top: 40%;
+    /*padding-left: 25%;*/
+    /*padding-right: 25%;*/
 }
 
 .bg-gradient-purple {
-    background: linear-gradient(90deg, purple 0, orange 100%) !important;
+    background: linear-gradient(90deg, #655999 0, lightsteelblue 100%) !important;
+    border:none;
 }
 
 .bg-gradient-purple:hover {
-    background: linear-gradient(90deg, purple 0, plum 100%) !important;
+    background: linear-gradient(90deg, #655999 0, gold 100%) !important;
+    border:none;
 }
 
 .sidebar,
@@ -139,4 +155,20 @@
     border-bottom-color: transparent;
     background-color: transparent;
     position: relative;
+}
+
+
+@media (max-width: 700px) {
+    .sidebar {
+        display: none;
+    }
+    .main-panel>.content {
+    max-width: 66%;
+    padding: 0px;
+    }
+}
+
+.myFooter{    
+    margin-top: 0 !important;
+    padding-top: 1rem !important;
 }

@@ -16,22 +16,25 @@
         <div class="position-relative">
             <!-- shape Hero -->
             <section class="section section-lg section-shaped pb-250">
-                <div class="container py-lg-md d-flex">
+                <div class="container d-flex">
                     <div class="col px-0">
                         <div class="row">
-                            <img src="https://cdn4.iconfinder.com/data/icons/SUPERVISTA/graphics/png/400/palette.png" alt="Smiley face" height="300" width="300">
+                            <img src="https://cdn4.iconfinder.com/data/icons/SUPERVISTA/graphics/png/400/palette.png" alt="Smiley face" height="250" width="250">
                             <div class="col-lg-6">
-                                <h1 class="display-3  text-white">ART COINS WEB
-                                    <span>Vende tu arte y gana dinero!</span>
-                                </h1>
+                                <h3 class="text-white">ART COINS WEB
+                                </h3>
+                                <h5 class="text-white">
+                                    Vende tu arte y gana dinero!
+                                </h5>
                                 <p class="lead  text-white">Art-Coins Web ofrece la posibilidad de ganar dinero de forma muy sencilla y divertida. Además puedes vender o comprar contenido artistico-digital!</p>
-                                <div class="btn-wrapper">
-                                    <a href="{{ URL('register') }}" class="btn btn-warning mt-4">
-                                        <span class="btn-inner--icon"><i class="fas fa-user-plus"></i></span>
-                                        <span class="btn-inner--text">Registrate</span>
-                                    </a>
 
-                                </div>
+                            </div>
+                            <div class="btn-wrapper ">
+                                <a href="{{ URL('register') }}" class="btn btn-warning myShadow rounded-circle bg-gradient-purple paddingButton" >
+                                    <span class="btn-inner--icon"><i class="fas fa-user-plus"></i></span>
+                                    <span class="btn-inner--text">Registrate</span>
+                                </a>
+
                             </div>
                         </div>
 
@@ -53,7 +56,7 @@
                         <div class="row row-grid">
                             <div class="col-lg-4">
                                 <div class="card card-lift--hover shadow border-0 wellBox">
-                                    <div class="card-body py-5">
+                                    <div class="card-body py-4">
                                         <div class="icon icon-shape icon-shape-primary rounded-circle mb-4">
                                             <i class="fas fa-coins"></i>
                                         </div>
@@ -71,7 +74,7 @@
                             </div>
                             <div class="col-lg-4">
                                 <div class="card card-lift--hover shadow border-0">
-                                    <div class="card-body py-5">
+                                    <div class="card-body py-4">
                                         <div class="icon icon-shape icon-shape-success rounded-circle mb-4">
                                             <i class="fas fa-shopping-cart"></i>
                                         </div>
@@ -87,7 +90,7 @@
                             </div>
                             <div class="col-lg-4">
                                 <div class="card card-lift--hover shadow border-0">
-                                    <div class="card-body py-5">
+                                    <div class="card-body py-4">
                                         <div class="icon icon-shape icon-shape-warning rounded-circle mb-4">
                                             <i class="fas fa-euro-sign"></i>
                                         </div>
@@ -108,7 +111,7 @@
         </section>
 
     </main>
-        @include('fooAndHead.footer')
+    @include('fooAndHead.footer')
     @include('links.footLinks')
 </body>
 

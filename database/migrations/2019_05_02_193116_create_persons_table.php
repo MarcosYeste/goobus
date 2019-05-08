@@ -15,15 +15,16 @@ class CreatePersonsTable extends Migration
     {
         Schema::create('persons', function (Blueprint $table) {
             $table->increments('id');
-            $table->string('name');
-            $table->string('lastname');            
-            $table->string('address');
-            $table->string('country');
-            $table->string('cp');
-            $table->string('description');
-            $table->string('phone');
-            $table->integer('artcoins');
-            $table->integer('money');            
+            $table->string('name')->nullable();
+            $table->string('lastname')->nullable();            
+            $table->string('address')->nullable();
+            $table->string('country')->nullable();
+            $table->string('cp')->nullable();
+            $table->string('description')->nullable();
+            $table->string('phone')->nullable();
+            $table->integer('artcoins')->default(0);
+            $table->integer('money')->default(0); 
+            $table->string('avatar')->nullable();
             $table->integer('user_id')->unsigned();
             $table->foreign('user_id')->references('id')->on('users') ->onDelete('cascade');
             $table->rememberToken();
