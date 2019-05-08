@@ -1,19 +1,19 @@
   <!--   Core JS Files   -->
-  <script src="profileMedia/js/core/jquery.min.js"></script>
-  <script src="profileMedia/js/core/popper.min.js"></script>
-  <script src="profileMedia/js/core/bootstrap.min.js"></script>
-  <script src="profileMedia/js/plugins/perfect-scrollbar.jquery.min.js"></script>
+  <script src="js/core/jquery.min.js"></script>
+  <script src="js/core/popper.min.js"></script>
+  <script src="js/core/bootstrap.min.js"></script>
+  <script src="js/plugins/perfect-scrollbar.jquery.min.js"></script>
   <!--  Google Maps Plugin    -->
   <!-- Place this tag in your head or just before your close body tag. -->
   <script src="https://maps.googleapis.com/maps/api/js?key=YOUR_KEY_HERE"></script>
   <!-- Chart JS -->
-  <script src="profileMedia/js/plugins/chartjs.min.js"></script>
+  <script src="js/plugins/chartjs.min.js"></script>
   <!--  Notifications Plugin    -->
-  <script src="profileMedia/js/plugins/bootstrap-notify.js"></script>
+  <script src="js/plugins/bootstrap-notify.js"></script>
   <!-- Control Center for Black Dashboard: parallax effects, scripts for the example pages etc -->
-  <script src="profileMedia/js/black-dashboard.min.js?v=1.0.0"></script>
+  <script src="js/black-dashboard/black-dashboard.min.js?v=1.0.0"></script>
   <!-- Black Dashboard DEMO methods, don't include it in your project! -->
-  <script src="profileMedia/demo/demo.js"></script>
+  <script src="demo/demo.js"></script>
   <script>
     $(document).ready(function() {
       $().ready(function() {

@@ -11,31 +11,34 @@
 </head>
 
 <body>
-    @include('fooAndHead.headerUser')
+    @include('footAndHead.headerUser')
     <main>
         <div class="position-relative">
             <!-- shape Hero -->
+            <!-- shape Hero -->
             <section class="section section-lg section-shaped pb-250">
-                <div class="container py-lg-md d-flex">
+                <div class="container d-flex">
                     <div class="col px-0">
                         <div class="row">
+                            <img src="https://cdn4.iconfinder.com/data/icons/SUPERVISTA/graphics/png/400/palette.png" alt="Smiley face" height="250" width="250">
                             <div class="col-lg-6">
-                                <h1 class="display-3  text-white">BIENVENIDO ART COINS WEB
-                                    <span>El lugar donde conseguir dinero fresco</span>
-                                </h1>
-                                <p class="lead  text-white">Puedes ganar coins en la seccion de anuncios y comprar arte digital en la sección Art</p>
-                                <div class="btn-wrapper">
-                                    <a href="https://demos.creative-tim.com/argon-design-system/docs/components/alerts.html" class="btn btn-info btn-icon mb-3 mb-sm-0">
-                                        <span class="btn-inner--icon"><i class="fa fa-code"></i></span>
-                                        <span class="btn-inner--text">Components</span>
-                                    </a>
-                                    <a href="https://www.creative-tim.com/product/argon-design-system" class="btn btn-white btn-icon mb-3 mb-sm-0">
-                                        <span class="btn-inner--icon"><i class="ni ni-cloud-download-95"></i></span>
-                                        <span class="btn-inner--text">Download HTML</span>
-                                    </a>
-                                </div>
+                                <h3 class="text-white">ART COINS WEB
+                                </h3>
+                                <h5 class="text-white">
+                                    Vende tu arte y gana dinero!
+                                </h5>
+                                <p class="lead  text-white">Art-Coins Web ofrece la posibilidad de ganar dinero de forma muy sencilla y divertida. Además puedes vender o comprar contenido artistico-digital!</p>
+
+                            </div>
+                            <div class="btn-wrapper ">
+                                <a href="{{ URL('register') }}" class="btn btn-warning myShadow rounded-circle bg-gradient-purple paddingButton" >
+                                    <span class="btn-inner--icon"><i class="fas fa-user-plus"></i></span>
+                                    <span class="btn-inner--text">Registrate</span>
+                                </a>
+
                             </div>
                         </div>
+
                     </div>
                 </div>
                 <!-- SVG separator -->
@@ -485,7 +488,7 @@
             </div>
         </section>
     </main>
-    @include('fooAndHead.footer')
+    @include('footAndHead.footer')
     @include('links.footLinks')
 </body>
 

@@ -23,7 +23,7 @@
 </head>
 
 <body class="white-content">
-    @include('fooAndHead.headerUser')
+    @include('footAndHead.headerUser')
   <div class="wrapper">
     <div class="sidebar">
       <!--

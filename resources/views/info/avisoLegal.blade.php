@@ -12,9 +12,9 @@
 
 <body>
     @if(1 == 1)
-        @include('fooAndHead.headerUser')
+        @include('footAndHead.headerUser')
     @else
-        @include('fooAndHead.headerWelcome')
+        @include('footAndHead.headerWelcome')
     @endif
     <main>
         <section class="section section-lg bg-gradient-default">
@@ -108,7 +108,7 @@
         </section>
 
     </main>
-    @include('fooAndHead.footer')
+    @include('footAndHead.footer')
     @include('links.footLinks')
 </body>
 

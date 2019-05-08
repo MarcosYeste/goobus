@@ -11,7 +11,7 @@
 </head>
 
 <body>
-    @include('fooAndHead.headerUser') 
+    @include('footAndHead.headerUser') 
     <main>
         <section class="section section-lg bg-gradient-secondary">
             <div class="container pt-lg pb-300">
@@ -104,7 +104,7 @@
         </section>
 
     </main>
-    @include('fooAndHead.footer')
+    @include('footAndHead.footer')
     @include('links.footLinks')
 </body>
 

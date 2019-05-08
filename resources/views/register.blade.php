@@ -11,7 +11,7 @@
 </head>
 
 <body>
-    @include('fooAndHead.headerWelcome')
+    @include('footAndHead.headerWelcome')
     <main>
         <section class="section section-shaped section-lg">
             <div class="container pt-lg-md">
@@ -96,7 +96,7 @@
             </div>
         </section>
     </main>
-    @include('fooAndHead.footer')
+    @include('footAndHead.footer')
     @include('links.footLinks')
 </body>
 

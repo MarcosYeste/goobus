@@ -15,8 +15,8 @@
 </head>
 
 <body class="white-content">
-    @include('fooAndHead.headerUser')
-    <div class="wrapper">
+    @include('footAndHead.headerUser')
+    <div class="wrapper myBgLightBlue">
         <div class="sidebar">
             <!--
         Tip 1: You can change the color of the sidebar using: data-color="blue | green | orange | red"
@@ -75,7 +75,7 @@
             </div>
             <!-- End Navbar -->
             <div class="content">
-                <div class="row">
+                <div class="row myBgBlue">
                     <div class="col-md-8">
                         <div class="card">
                             <div class="card-header">
@@ -94,33 +94,33 @@
                                     </div>
                                     <div class="row">
                                         <div class="col-md-6 pr-md-1">
-                                         <div class="form-group">
-                                               
+                                            <div class="form-group">
+
                                                 <label>Nickname</label>
                                                 <input type="text" class="form-control" placeholder="nickname" name="nickname" value="{{$user['nickname']}}">
                                             </div>
                                         </div>
                                         <div class="col-md-6 pr-md-1">
                                             <div class="form-group">
-                                                 <label for="exampleInputEmail1">Correo electrónico</label>
+                                                <label for="exampleInputEmail1">Correo electrónico</label>
                                                 <input type="email" class="form-control" name="email" placeholder="email" value="{{$user['email']}}">
                                             </div>
-                                        </div>                                      
+                                        </div>
                                     </div>
                                     <div class="row">
-                                          <div class="col-md-6 pr-md-1">
-                                               <div class="form-group">
+                                        <div class="col-md-6 pr-md-1">
+                                            <div class="form-group">
                                                 <label>Old password</label>
                                                 <input type="password" class="form-control" placeholder="Password" name="user_pass" value="{{$user['user_pass']}}">
                                             </div>
-                                            
+
                                         </div>
-                                          <div class="col-md-6 pr-md-1">
-                                               <div class="form-group">
+                                        <div class="col-md-6 pr-md-1">
+                                            <div class="form-group">
                                                 <label>New Password</label>
                                                 <input type="password" class="form-control" placeholder="Password" name="user_pass" value="{{$user['user_pass']}}">
                                             </div>
-                                            
+
                                         </div>
                                     </div>
                                     <div class="row">
@@ -215,11 +215,11 @@
                         </div>
                     </div>
                 </div>
+                <div class="">
+                    @include('footAndHead.footer')
+                </div>
             </div>
         </div>
-    </div>
-    <div class="paddingfoot">
-        @include('fooAndHead.footer')
     </div>
     @include('links.profileFootLinks')
     @include('links.footLinks')

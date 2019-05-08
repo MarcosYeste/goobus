@@ -11,7 +11,7 @@
 </head>
 
 <body>
-    @include('fooAndHead.headerWelcome')
+    @include('footAndHead.headerWelcome')
     <main>
         <div class="position-relative">
             <!-- shape Hero -->
@@ -111,7 +111,7 @@
         </section>
 
     </main>
-    @include('fooAndHead.footer')
+    @include('footAndHead.footer')
     @include('links.footLinks')
 </body>
 
