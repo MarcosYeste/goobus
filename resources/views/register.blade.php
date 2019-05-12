@@ -48,31 +48,32 @@
                                             <div class="input-group-prepend">
                                                 <span class="input-group-text"><i class="ni ni-hat-3"></i></span>
                                             </div>
-                                           
-                                            <input class="form-control" placeholder="Nickname" name="nickname" type="text">
-                                        </div>
+                                            <input class="form-control" placeholder="Nickname" name="nickname" type="text" >                 
+                                        </div> 
                                     </div>
+                                     <span class="text-danger"> {{$errors->first('nickname')}}</span>
                                     <div class="form-group">
                                         <div class="input-group input-group-alternative mb-3">
                                             <div class="input-group-prepend">
                                                 <span class="input-group-text"><i class="ni ni-email-83"></i></span>
                                             </div>
-                                            <input class="form-control" placeholder="Email" name="email" type="email">
+                                            <input class="form-control" placeholder="Email" name="email" type="email" >
                                         </div>
                                     </div>
+                                    
+                                        <span class="text-danger"> {{$errors->first('email')}}</span>
                                     <div class="form-group">
                                         <div class="input-group input-group-alternative">
                                             <div class="input-group-prepend">
                                                 <span class="input-group-text"><i class="ni ni-lock-circle-open"></i></span>
                                             </div>
-                                            <input class="form-control" placeholder="Password" name="user_pass" type="password">
+                                         
+                                           
+                                            <input class="form-control" placeholder="Password" name="user_pass" type="password" >
                                         </div>
+                                           
                                     </div>
-                                    <div class="text-muted font-italic">
-                                        <small>password strength:
-                                            <span class="text-success font-weight-700">strong</span>
-                                        </small>
-                                    </div>
+                                    <span class="text-danger"> {{$errors->first('user_pass')}}</span>
                                     <div class="row my-4">
                                         <div class="col-12">
                                             <div class="custom-control custom-control-alternative custom-checkbox">

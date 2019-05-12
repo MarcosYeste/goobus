@@ -34,8 +34,11 @@ Route::post('update', 'PersonController@update');
 Route::get('login', 'PersonController@login');
 Route::post('login', 'PersonController@sign');// Molaria ponerle un Name para que en la URL no saliera login cuando te manda a la pagina principal
 
-/* RUTAS PRODUCTS  */
-Route::get('product','ProductController@showMyProducts');
+/* RUTAS PRODUCTS  */ 
+//Route::get('product','ProductController@showMyProducts');
+Route::get('myArt','ProductController@showMyProducts');
+Route::get('art','ProductController@showAllProducts');
+Route::post('art','ProductController@store');
 
 
 /*

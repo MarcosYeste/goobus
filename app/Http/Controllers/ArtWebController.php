@@ -15,58 +15,54 @@ class ArtWebController extends Controller
      */
     public function index()
     {
-         return view("bienvenido");
-    }
-      public function login()
+        if (Session::has('user') && Session::has('person')) {
+            
+            return redirect('artCoinWeb'); // control de artWebController
+            
+        } else {
+            
+            return view('bienvenido');
+        }
+    }   
+   
+    public function contact()
     {
-         return view('login');//("bienvenido");
+        
+        return view('info.contact'); //("bienvenido");
     }
-    
-      public function secondIndex()
+    public function privacity()
     {
-         return view('landing');//("bienvenido");
+        
+        return view('info.politicaPrivacidad'); //("bienvenido");
     }
-       public function registro()
+    public function cookies()
     {
-         return view('register');//("bienvenido");
-    }
-       public function contact()
-    {
-           
-         return view('info.contact');//("bienvenido");
-    }
-       public function privacity()
-    {
-           
-         return view('info.politicaPrivacidad');//("bienvenido");
-    }
-       public function cookies()
-    {
-           
-         return view('info.politicaCookies');//("bienvenido");
+        
+        return view('info.politicaCookies'); //("bienvenido");
     }
     
     
     public function artCoinWeb()
-{ 
-    if (Session::has('user') && Session::has('person')) {
+    {
+        if (Session::has('user') && Session::has('person')) {
+            
+            $user   = Session::get('user');
+            $person = Session::get('person');
+            return view('landing', compact('user', 'person'));
+            
+        } else {
+            // aqui deberia ir un error de session expirada o algo
+            $errorMessage = "";
+            return view("login", compact('errorMessage'));
+        }
         
-        $user = Session::get('user');
-        $person = Session::get('person');
-        return view('landing',compact('user','person')); 
-   
-     }else{
-        // aqui deberia ir un error de session expirada o algo
-        return view('login');
+    }
+    public function logout()
+    {
+        Session::flush();
+        return view('bienvenido');
     }
     
-}
-public function logout()
-{ 
-    Session::flush();
-    return view('bienvenido');
-}
-
     /**
      * Show the form for creating a new resource.
      *
@@ -74,9 +70,9 @@ public function logout()
      */
     public function create()
     {
-         Log::debug('CREATE');
+        Log::debug('CREATE');
     }
-
+    
     /**
      * Store a newly created resource in storage.
      *
@@ -87,7 +83,7 @@ public function logout()
     {
         Log::debug('STORE');
     }
-
+    
     /**
      * Display the specified resource.
      *
@@ -98,7 +94,7 @@ public function logout()
     {
         Log::debug('SHOW');
     }
-
+    
     /**
      * Show the form for editing the specified resource.
      *
@@ -109,7 +105,7 @@ public function logout()
     {
         Log::debug('EDIT');
     }
-
+    
     /**
      * Update the specified resource in storage.
      *
@@ -121,7 +117,7 @@ public function logout()
     {
         //
     }
-
+    
     /**
      * Remove the specified resource from storage.
      *

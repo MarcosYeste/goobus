@@ -65,6 +65,7 @@
     color: gold;
 }
 
+
 .myBgBlue{
     background-color: lightsteelblue !important;
 }
@@ -171,4 +172,11 @@
 .myFooter{    
     margin-top: 0 !important;
     padding-top: 1rem !important;
+}
+
+.myMargin{
+    margin: 1rem;
+}
+.checkedStar {
+  color: orange;
 }

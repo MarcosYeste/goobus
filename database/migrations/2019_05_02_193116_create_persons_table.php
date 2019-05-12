@@ -20,7 +20,7 @@ class CreatePersonsTable extends Migration
             $table->string('address')->nullable();
             $table->string('country')->nullable();
             $table->string('cp')->nullable();
-            $table->string('description')->nullable();
+            $table->string('description',255)->nullable();
             $table->string('phone')->nullable();
             $table->integer('artcoins')->default(0);
             $table->integer('money')->default(0); 

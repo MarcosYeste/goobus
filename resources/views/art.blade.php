@@ -18,47 +18,11 @@
             <!--
         Tip 1: You can change the color of the sidebar using: data-color="blue | green | orange | red"
     -->
-            <div class="sidebar-wrapper">
+        <div class="sidebar-wrapper">
                 <div class="logo">
+                    <h2 > FILTRADO</h2>
                 </div>
-                <ul class="nav">
-                    <li>
-                        <a href="{{ URL('profile') }}">
-                            <i class="tim-icons icon-atom"></i>
-                            <p>Perfil</p>
-                        </a>
-                    </li>
-                    <li>
-                        <a href="{{ URL('myArt') }}">
-                            <i class="tim-icons icon-atom"></i>
-                            <p>Productos</p>
-                        </a>
-                    </li>
-                    <li>
-                        <a href="./notifications.html">
-                            <i class="tim-icons icon-bell-55"></i>
-                            <p>Notifications</p>
-                        </a>
-                    </li>
-                    <li class="active ">
-                        <a href="./user.html">
-                            <i class="tim-icons icon-single-02"></i>
-                            <p>User Profile</p>
-                        </a>
-                    </li>
-                    <li>
-                        <a href="./tables.html">
-                            <i class="tim-icons icon-puzzle-10"></i>
-                            <p>Table List</p>
-                        </a>
-                    </li>
-                    <li class="active-pro">
-                        <a href="">
-                            <i class=""></i>
-                            <p></p>
-                        </a>
-                    </li>
-                </ul>
+               
             </div>
         </div>
         <div class="main-panel">
@@ -80,14 +44,11 @@
                     <div class="col-md-12">
                         <div class="card">
                             <div class="card-header">
-                                <h5 class="title">Mis Productos</h5>
-                                <form method="post" action="{{action('ProductController@store')}}" enctype="multipart/form-data">
-                                    <input type="submit" class="btn btn-primary mt-3" value="Crear producto">
-                                </form>
+                                <h3 class="title">Bienvenido a la tienda de arte!</h3>
                             </div>
                             <div class="card-body all-icons">
                                 <div class="row">
-                                    @foreach ($products as $product)
+                                     @foreach ($products as $product)
                                     <div class="card myMargin myBgLightBlue" style="width: 19rem;">
                                         <div class="d-flex">
                                             <div class="col">

@@ -11,7 +11,7 @@
 </head>
 
 <body>
-    @if(1 == 1)
+    @if(1 == 0)
         @include('footAndHead.headerUser')
     @else
         @include('footAndHead.headerWelcome')

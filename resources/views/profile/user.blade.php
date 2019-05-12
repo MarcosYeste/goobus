@@ -4,8 +4,6 @@
 <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-    <link rel="apple-touch-icon" sizes="76x76" href="../assets/img/apple-icon.png">
-    <link rel="icon" type="image/png" href="../assets/img/favicon.png">
     <title>
         Perfil
     </title>
@@ -26,7 +24,13 @@
                 </div>
                 <ul class="nav">
                     <li>
-                        <a href="./icons.html">
+                        <a href="{{ URL('profile') }}">
+                            <i class="tim-icons icon-atom"></i>
+                            <p>Perfil</p>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="{{ URL('myArt') }}">
                             <i class="tim-icons icon-atom"></i>
                             <p>Productos</p>
                         </a>

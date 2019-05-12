@@ -1,7 +1,7 @@
 <header class="header-global">
     <nav class="navbar fixed-top navbar-expand-lg navbar-dark bg-purple" id="navbar1">
         <div class="container">
-            <a class="navbar-brand mr-lg-5" href="{{ URL('/artCoinWeb') }}">
+            <a class="navbar-brand mr-lg-5" href="{{ URL('/home') }}">
                 <img src="img/brand/temp_brand.jpg">
             </a>
             <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbar_global" aria-controls="navbar_global" aria-expanded="false" aria-label="Toggle navigation">
@@ -11,7 +11,7 @@
                 <div class="navbar-collapse-header">
                     <div class="row">
                         <div class="col-6 collapse-brand">
-                            <a href="{{ URL('/artCoinWeb') }}">
+                            <a href="{{ URL('/home') }}">
                                 <img src="img/brand/temp_brand.jpg">
                             </a>
                         </div>

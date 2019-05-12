@@ -48,22 +48,22 @@
                                             <div class="input-group-prepend">
                                                 <span class="input-group-text"><i class="ni ni-email-83"></i></span>
                                             </div>
-                                            <input class="form-control" name="nickname" placeholder="Nickname" type="text">
+                                            <input class="form-control" name="nickname" placeholder="Nickname" type="text" required>
                                         </div>
+                                        <span class="text-danger"> {{$errors->first('nickname')}}</span>
                                     </div>
                                     <div class="form-group">
                                         <div class="input-group input-group-alternative">
                                             <div class="input-group-prepend">
                                                 <span class="input-group-text"><i class="ni ni-lock-circle-open"></i></span>
                                             </div>
-                                            <input class="form-control" name="user_pass" placeholder="Escribir contraseña" type="password">
+                                            <input class="form-control" name="user_pass" placeholder="Escribir contraseña" type="password" required>
                                         </div>
+                                        <span class="text-danger"> {{$errors->first('user_pass')}}</span>
                                     </div>
-                                    <div class="custom-control custom-control-alternative custom-checkbox">
-                                        <input class="custom-control-input" id=" customCheckLogin" type="checkbox">
-                                        <label class="custom-control-label" for=" customCheckLogin">
-                                            <span>Recuerdame</span>
-                                        </label>
+                                    
+                                    <div class="custom-control custom-control-alternative ">                                        
+                                            <span>{{$errorMessage}}</span>
                                     </div>
                                     <div class="text-center">
                                         <input type="submit" class="btn btn-primary my-4" value="Iniciar Sessión">
