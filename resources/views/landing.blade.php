@@ -22,19 +22,12 @@
                         <div class="row">
                             <img src="https://cdn4.iconfinder.com/data/icons/SUPERVISTA/graphics/png/400/palette.png" alt="Smiley face" height="250" width="250">
                             <div class="col-lg-6">
-                                <h3 class="text-white">ART COINS WEB
+                                <h3 class="text-white">BIENVENIDO A ART COINS WEB!!
                                 </h3>
                                 <h5 class="text-white">
                                     Vende tu arte y gana dinero!
                                 </h5>
-                                <p class="lead  text-white">Art-Coins Web ofrece la posibilidad de ganar dinero de forma muy sencilla y divertida. Además puedes vender o comprar contenido artistico-digital!</p>
-
-                            </div>
-                            <div class="btn-wrapper ">
-                                <a href="{{ URL('register') }}" class="btn btn-warning myShadow rounded-circle bg-gradient-purple paddingButton" >
-                                    <span class="btn-inner--icon"><i class="fas fa-user-plus"></i></span>
-                                    <span class="btn-inner--text">Registrate</span>
-                                </a>
+                                <p class="lead  text-white">Gana unas moneditas o crea tus propios productos para vender!</p>
 
                             </div>
                         </div>

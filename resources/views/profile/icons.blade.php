@@ -7,7 +7,6 @@
     <title>
         Black Dashboard by Creative Tim
     </title>
-    @include('links.profileHeadLinks')
     @include('links.headLinks')
 </head>
 
@@ -88,9 +87,9 @@
                             <div class="card-body all-icons">
                                 <div class="row">
                                     @foreach ($products as $product)
-                                    <div class="card myMargin myBgLightBlue" style="width: 19rem;">
-                                        <div class="d-flex">
-                                            <div class="col">
+                                <div class="card myMargin myBgLightBlue " style="width: 19rem;">
+                                        <div class="d-flex pt-3">
+                                            <div class="col ">
                                                 <img src="https://www.dhresource.com/0x0s/f2-albu-g7-M00-89-87-rBVaSltxj1SAdno0AAUMkCn_9LE272.jpg/plein-foret-5d-diamant-peinture-colorful.jpg" alt="..." width="120" height="120">
                                                 <div>
                                                     <span class="fa fa-star checkedStar"></span>
@@ -105,9 +104,9 @@
                                                 </div>
 
                                             </div>
-                                            <div class="card-body">
+                                            <div class="card-body p-0">
                                                 <h5 class="card-title">{{ $product->pName }}</h5>
-                                                <input type="submit" class="btn btn-primary mt-3" value="Comprar">
+                                                 <a href="{{url(artDesc)}}" class="btn btn-primary mt-3">Ir a compra</a>
 
 
                                             </div>

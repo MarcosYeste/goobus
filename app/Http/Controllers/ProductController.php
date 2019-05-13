@@ -22,11 +22,9 @@ class ProductController extends Controller
         
         $user     = Session::get('user');
         $person   = Session::get('person');
-        $products = \goobus\Product::where('persona_id', $person->id); 
-         Log::debug('Hola '.$person->id);
-        foreach ($products as $p) {
-                Log::debug('Hola '.$p->pName);
-        }
+        
+        $products = \goobus\Product::where('persona_id', $person->id)->get();
+         Log::debug('Hola id '.$person->id);
         
         return view('profile.icons', compact('user', 'person','products'));
     }
@@ -107,7 +105,12 @@ class ProductController extends Controller
      */
     public function show($id)
     {
-        //
+        $user     = Session::get('user');
+        $person   = Session::get('person');
+        
+        $product = \goobus\Product::find($id);
+        
+        return view('artDesc', compact('user', 'person','product'));
     }
 
     /**

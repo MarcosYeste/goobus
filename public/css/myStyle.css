@@ -180,3 +180,7 @@
 .checkedStar {
   color: orange;
 }
+
+.noPadding{
+    padding: 0px !important;
+}

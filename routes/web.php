@@ -39,6 +39,7 @@ Route::post('login', 'PersonController@sign');// Molaria ponerle un Name para qu
 Route::get('myArt','ProductController@showMyProducts');
 Route::get('art','ProductController@showAllProducts');
 Route::post('art','ProductController@store');
+Route::get('artDesc{id}','ProductController@show');
 
 
 /*
