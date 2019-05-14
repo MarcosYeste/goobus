@@ -26,7 +26,7 @@
                 <div class="d-flex justify-content-around headbodywidth">
                     <ul class="navbar-nav align-items-lg-center">
                         <li class="nav-item dropdown">
-                            <a href="#" class="media d-flex align-items-center">
+                            <a href="{{ URL('ads') }}" class="media d-flex align-items-center">
                                 <div class="icon icon-shape bg-gradient-purple rounded-circle text-white">
                                     <i class="ni ni-spaceship"></i>
                                 </div>

@@ -57,6 +57,22 @@ class ArtWebController extends Controller
         }
         
     }
+    
+     public function ads()
+    {
+        if (Session::has('user') && Session::has('person')) {
+            
+            $user   = Session::get('user');
+            $person = Session::get('person');
+            return view('ads', compact('user', 'person'));
+            
+        } else {
+            // aqui deberia ir un error de session expirada o algo
+            $errorMessage = "";
+            return view("login", compact('errorMessage'));
+        }
+        
+    }
     public function logout()
     {
         Session::flush();

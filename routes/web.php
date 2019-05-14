@@ -19,11 +19,11 @@ Route::get('/', function () {
 /* RUTAS DE LA WEB */
 Route::resource('/','ArtWebController');
 Route::get('home','ArtWebController@index');
-Route::post('artweb','ArtWebController@secondIndex');
 Route::get('contact', 'ArtWebController@contact');
 Route::get('privacidad', 'ArtWebController@privacity');
 Route::get('cookies', 'ArtWebController@cookies');
 Route::get('artCoinWeb', 'ArtWebController@artCoinWeb');
+Route::get('ads', 'ArtWebController@ads');
 Route::get('logout', 'ArtWebController@logout');
 
 /* RUTAS PERSON  */
@@ -40,6 +40,7 @@ Route::get('myArt','ProductController@showMyProducts');
 Route::get('art','ProductController@showAllProducts');
 Route::post('art','ProductController@store');
 Route::get('artDesc{id}','ProductController@show');
+Route::post('destroy{id}','ProductController@destroy');
 
 
 /*

@@ -27,7 +27,7 @@
                                 <h5 class="text-white">
                                     Vende tu arte y gana dinero!
                                 </h5>
-                                <p class="lead  text-white">Gana unas moneditas o crea tus propios productos para vender!</p>
+                                <p class="lead  text-white">Gana unas moneditas en la sección de anuncios o crea tus propios productos para vender en tu perfil!</p>
 
                             </div>
                         </div>

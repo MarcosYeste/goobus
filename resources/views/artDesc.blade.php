@@ -18,11 +18,11 @@
             <!--
         Tip 1: You can change the color of the sidebar using: data-color="blue | green | orange | red"
     -->
-        <div class="sidebar-wrapper">
+            <div class="sidebar-wrapper">
                 <div class="logo">
-                    <h2 > FILTRADO</h2>
+                    <h2> FILTRADO</h2>
                 </div>
-               
+
             </div>
         </div>
         <div class="main-panel">
@@ -48,7 +48,7 @@
                             </div>
                             <div class="card-body all-icons">
                                 <div class="row">
-                              <div class="card myMargin myBgLightBlue " style="width: 25rem;">
+                                    <div class="card myMargin myBgLightBlue " style="width: 25rem;">
                                         <div class="d-flex pt-3">
                                             <div class="col ">
                                                 <img src="https://www.dhresource.com/0x0s/f2-albu-g7-M00-89-87-rBVaSltxj1SAdno0AAUMkCn_9LE272.jpg/plein-foret-5d-diamant-peinture-colorful.jpg" alt="..." width="120" height="120">
@@ -67,8 +67,15 @@
                                             </div>
                                             <div class="card-body p-0">
                                                 <h5 class="card-title">{{ $product->pName }}</h5>
-                                                 <p class="card-text">{{ $product->pType }}</p>
+                                                <p class="card-text">{{ $product->pType }}</p>
                                                 <p class="card-text">{{ $product->pDesc }}</p>
+                                                @if($myProduct)
+                                                <form role="form" action="{{action('ProductController@destroy', $product->id )}}" method="post">
+                                                <input type="submit" class="btn btn-primary mt-3" value="Eliminar">
+                                                </form>
+                                                @else
+                                                <a href="{{action('ProductController@show', $product->id )}}" class="btn btn-primary mt-3">Comprar</a>
+                                                @endif
                                             </div>
                                         </div>
                                     </div>

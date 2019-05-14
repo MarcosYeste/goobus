@@ -106,7 +106,7 @@
                                             </div>
                                             <div class="card-body p-0">
                                                 <h5 class="card-title">{{ $product->pName }}</h5>
-                                                 <a href="{{url(artDesc)}}" class="btn btn-primary mt-3">Ir a compra</a>
+                                                <a href="{{action('ProductController@show', $product->id )}}" class="btn btn-primary mt-3">Detalles</a>
 
 
                                             </div>

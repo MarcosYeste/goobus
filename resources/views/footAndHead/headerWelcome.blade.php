@@ -23,38 +23,7 @@
                         </div>
                     </div>
                 </div>
-                <div class="d-flex justify-content-around headbodywidth">
-                    <ul class="navbar-nav align-items-lg-center">
-                        <li class="nav-item dropdown">
-                            <a href="#" class="media d-flex align-items-center">
-                                <div class="icon icon-shape bg-gradient-purple rounded-circle text-white">
-                                    <i class="ni ni-spaceship"></i>
-                                </div>
-                                <div class="media-body ml-3">
-                                    <h6 class="heading myBlueGold mb-md-1">Anuncios</h6>
-                                </div>
-                            </a>
-                        </li>
-                        <li class="nav-item dropdown">
-                            <a href="#" class="media d-flex align-items-center">
-                                <div class="icon icon-shape bg-gradient-purple rounded-circle text-white">
-                                    <i class="ni ni-palette"></i>
-                                </div>
-                                <div class="media-body ml-3">
-                                    <h6 class="heading myBlueGold mb-md-1">Art</h6>
-                                </div>
-                            </a>
-                        </li>
-                    </ul>
-                    <!-- <a href="#" class="media d-flex align-items-center">
-                            <div class="icon icon-shape bg-gradient-warning rounded-circle text-white">
-                                <i class="ni ni-ui-04"></i>
-                            </div>
-                            <div class="media-body ml-3">
-                                <h5 class="heading text-warning mb-md-1">Help</h5>
-                            </div>
-                        </a>-->
-                </div>
+             
                 <span class="navbar-nav  ml-lg-auto"></span>
                 <!--Se parador -->
                 <div class="d-flex justify-content-around">

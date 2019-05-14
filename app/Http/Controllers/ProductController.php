@@ -105,12 +105,18 @@ class ProductController extends Controller
      */
     public function show($id)
     {
+        $myProduct = false;
         $user     = Session::get('user');
         $person   = Session::get('person');
         
         $product = \goobus\Product::find($id);
         
-        return view('artDesc', compact('user', 'person','product'));
+        if($product->persona_id == $person->id){
+            
+            $myProduct = true;
+        }
+        
+        return view('artDesc', compact('user', 'person','product','myProduct'));
     }
 
     /**
@@ -146,6 +152,6 @@ class ProductController extends Controller
     {
        $product = \goobus\Product::find($id);
        $product->delete();
-       return redirect('productId');
+      return redirect('myArt');
     }
 }
