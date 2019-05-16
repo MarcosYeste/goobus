@@ -9,7 +9,6 @@ use goobus\Http\Requests\userUpdateValidate;
 use Log;
 use Session;
 use Storage;
-use Image;
 use Hash;
 
 class PersonController extends Controller
@@ -35,9 +34,8 @@ class PersonController extends Controller
          if (Session::has('user') && Session::has('person')) {
              
             $user   = Session::get('user');
-            $person = Session::get('person');
-            $avatar = "../storage/avatar/images/" . $person->avatar;             
-            return view('profile.user', compact('user', 'person', 'avatar'));
+            $person = Session::get('person');            
+            return view('profile.user', compact('user', 'person'));
              
          }else{
              
@@ -197,9 +195,9 @@ class PersonController extends Controller
         if ($request->file('avatar') != "") { //Si esta vacio no genero ni guardo foto
             
             $image          = $request->file('avatar');
-            $imagedesc      = $request->input('nickname') . "." . "jpg";
+            $imagedesc      = "../storage/avatar/storage/avatar/images/".$request->input('nickname') . "_".$image->getClientOriginalName();
             $person->avatar = $imagedesc;
-            Storage::disk('avatar')->putFileAs('images', $image, $imagedesc);
+            Storage::disk('avatar')->putFileAs('image', $image, $imagedesc);
             
         }
         

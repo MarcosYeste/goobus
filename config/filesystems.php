@@ -66,7 +66,11 @@ return [
          'avatar' => [
          'driver' => 'local',
          'root'   => storage_path().'/avatar',
-  ],
+        ],
+        'product' => [
+         'driver' => 'local',
+         'root'   => storage_path().'/product',
+        ],
 
     ],
 

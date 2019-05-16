@@ -51,7 +51,7 @@
                                     <div class="card myMargin myBgLightBlue " style="width: 19rem;">
                                         <div class="d-flex pt-3">
                                             <div class="col ">
-                                                <img src="https://www.dhresource.com/0x0s/f2-albu-g7-M00-89-87-rBVaSltxj1SAdno0AAUMkCn_9LE272.jpg/plein-foret-5d-diamant-peinture-colorful.jpg" alt="..." width="120" height="120">
+                                                <img src="{{$product->pUrl}}" alt="..." width="120" height="120">
                                                 <div>
                                                     <span class="fa fa-star checkedStar"></span>
                                                     <span class="fa fa-star checkedStar"></span>
@@ -61,7 +61,7 @@
                                                 </div>
                                                 <div class="d-flex mt-3">
                                                     <p class="card-text">{{ $product->pPrice }} <i class="fas fa-coins "></i></p>
-                                                    <p class="card-text ml-2">{{ $product->pClienBenefit }} <i class="fas fa-euro-sign"></i></p>
+                                                    <p class="card-text ml-2">{{ $product->pClientBenefit }} <i class="fas fa-euro-sign"></i></p>
                                                 </div>
 
                                             </div>
@@ -84,7 +84,6 @@
                     @include('footAndHead.footer')
                 </div>
             </div>
-
         </div>
     </div>
 

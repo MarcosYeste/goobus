@@ -191,7 +191,7 @@
                                 <div class="card-text">
                                     <div class="author">
                                         <a href="javascript:void(0)">
-                                            <img class="avatar" src="{{$avatar}}" value="{{$avatar}}" alt="...">
+                                            <img class="avatar" src="{{$person['avatar']}}" value="{{$person['avatar']}}" alt="...">
                                             <h5 class="title">{{$user['nickname']}}</h5>
                                         </a>
                                         <p class="description">

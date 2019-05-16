@@ -40,6 +40,7 @@ Route::get('myArt','ProductController@showMyProducts');
 Route::get('art','ProductController@showAllProducts');
 Route::post('art','ProductController@store');
 Route::get('artDesc{id}','ProductController@show');
+Route::get('creatProduct','ProductController@create');
 Route::post('destroy{id}','ProductController@destroy');
 
 

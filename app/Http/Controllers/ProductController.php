@@ -5,6 +5,7 @@ namespace goobus\Http\Controllers;
 use Illuminate\Http\Request;
 use Session;
 use Log;
+use Storage;
 
 class ProductController extends Controller
 {
@@ -22,9 +23,7 @@ class ProductController extends Controller
         
         $user     = Session::get('user');
         $person   = Session::get('person');
-        
-        $products = \goobus\Product::where('persona_id', $person->id)->get();
-         Log::debug('Hola id '.$person->id);
+        $products = \goobus\Product::where('persona_id', $person->id)->get();  
         
         return view('profile.icons', compact('user', 'person','products'));
     }
@@ -33,7 +32,8 @@ class ProductController extends Controller
         
         $user     = Session::get('user');
         $person   = Session::get('person');
-        $products = \goobus\Product::all();       
+        $products = \goobus\Product::all(); 
+        $products = \goobus\Product::where('persona_id', $person->id)->get();       
         
         return view('art', compact('user', 'person','products'));
     }
@@ -45,7 +45,9 @@ class ProductController extends Controller
      */
     public function create()
     {
-        //
+        $user     = Session::get('user');
+        $person   = Session::get('person');
+        return view('profile.createProduct', compact('user', 'person'));
     }
 
     /**
@@ -57,25 +59,35 @@ class ProductController extends Controller
     public function store(Request $request)
     {
          $person = Session::get('person');
-       /* 
+         $user     = Session::get('user');
+      
          $product                 = new \goobus\Product;
          $product->pName          = $request->input('pName');
          $product->pDesc          = $request->input('pDesc');
          $product->pPrice         = $request->input('pPrice');
-         $product->pClienBenefit  = $request->input('pClientBenefit');
-         $product->pUrl           = $request->input('pUrl');
+         $product->pClientBenefit  = $request->input('pClientBenefit');
+        
+         if ($request->file('pUrl') != "") { //Si esta vacio no genero ni guardo foto
+            
+            $image          = $request->file('pUrl');
+            $imagedesc      = "../storage/product/storage/product/images/".$user->nickname ."_". $image->getClientOriginalName();          
+            $product->pUrl  = $imagedesc;            
+            Storage::disk('product')->putFileAs('images', $image, $imagedesc);            
+        }
+        
          $product->pType          = $request->input('pType');
-         $product->pStars         = $request->input('pStars');
-         $product->pTimesBought   = $request->input('pTimesBought');
+         $product->pStars         = "3";
+         $product->persona_id     = $person->id;
          $product->save();        
         
          $recordShop                   = new \goobus\RecordShop;
-         $recordShop->recPrice         = $request->input('recPrice');
-         $recordShop->recClienBenefit  = $request->input('recClientBenefit');
+         $recordShop->recPrice         = $request->input('pPrice');
+         $recordShop->recClientBenefit  = $request->input('pClientBenefit');
          $recordShop->persona_id       = $person->id;
          $recordShop->product_id       = $product->id;
-         $product->save();*/
+         $product->save();
         
+        /*
          $product                 = new \goobus\Product;
          $product->pName          = "La mona Lissy";
          $product->pDesc          = "Dibujos de bellas artes";
@@ -93,6 +105,7 @@ class ProductController extends Controller
          $recordShop->persona_id       = $person->id;
          $recordShop->product_id       = $product->id;
          $recordShop->save();
+         */
         
          return redirect('myArt');
     }
@@ -151,6 +164,17 @@ class ProductController extends Controller
     public function destroy($id)
     {
        $product = \goobus\Product::find($id);
+        
+        //$contents = Storage::get('file.jpg');
+        // OR 
+        //$exists = Storage::disk('s3')->exists('file.jpg');
+        
+        // Y ELIMINAR 
+        // Storage::delete('file.jpg');
+        // OR 
+        //Storage::delete(['file.jpg', 'file2.jpg']);
+
+        
        $product->delete();
       return redirect('myArt');
     }
