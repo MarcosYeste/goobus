@@ -32,8 +32,7 @@ class ProductController extends Controller
         
         $user     = Session::get('user');
         $person   = Session::get('person');
-        $products = \goobus\Product::all(); 
-        $products = \goobus\Product::where('persona_id', $person->id)->get();       
+        $products = \goobus\Product::all();       
         
         return view('art', compact('user', 'person','products'));
     }
@@ -70,7 +69,7 @@ class ProductController extends Controller
          if ($request->file('pUrl') != "") { //Si esta vacio no genero ni guardo foto
             
             $image          = $request->file('pUrl');
-            $imagedesc      = "../storage/product/storage/product/images/".$user->nickname ."_". $image->getClientOriginalName();          
+            $imagedesc      = "".$user->nickname ."_". $image->getClientOriginalName();              
             $product->pUrl  = $imagedesc;            
             Storage::disk('product')->putFileAs('images', $image, $imagedesc);            
         }
@@ -82,7 +81,7 @@ class ProductController extends Controller
         
          $recordShop                   = new \goobus\RecordShop;
          $recordShop->recPrice         = $request->input('pPrice');
-         $recordShop->recClientBenefit  = $request->input('pClientBenefit');
+         $recordShop->recClientBenefit = $request->input('pClientBenefit');
          $recordShop->persona_id       = $person->id;
          $recordShop->product_id       = $product->id;
          $product->save();

@@ -191,7 +191,7 @@
                                 <div class="card-text">
                                     <div class="author">
                                         <a href="javascript:void(0)">
-                                            <img class="avatar" src="{{$person['avatar']}}" value="{{$person['avatar']}}" alt="...">
+                                            <img class="avatar" src="../storage/avatar/images/{{$person['avatar']}}" value="{{$person['avatar']}}" alt="...">
                                             <h5 class="title">{{$user['nickname']}}</h5>
                                         </a>
                                         <p class="description">
@@ -225,7 +225,6 @@
             </div>
         </div>
     </div>
-    @include('links.profileFootLinks')
     @include('links.footLinks')
 </body>
 

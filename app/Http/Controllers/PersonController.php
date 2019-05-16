@@ -195,9 +195,9 @@ class PersonController extends Controller
         if ($request->file('avatar') != "") { //Si esta vacio no genero ni guardo foto
             
             $image          = $request->file('avatar');
-            $imagedesc      = "../storage/avatar/storage/avatar/images/".$request->input('nickname') . "_".$image->getClientOriginalName();
+            $imagedesc      = "".$request->input('nickname'). "_".$image->getClientOriginalName();            
             $person->avatar = $imagedesc;
-            Storage::disk('avatar')->putFileAs('image', $image, $imagedesc);
+            Storage::disk('avatar')->putFileAs('images', $image, $imagedesc);
             
         }
         

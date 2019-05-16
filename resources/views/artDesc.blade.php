@@ -51,7 +51,7 @@
                                     <div class="card myMargin myBgLightBlue " style="width: 25rem;">
                                         <div class="d-flex pt-3">
                                             <div class="col ">
-                                                <img src="{{$product->pUrl}}" alt="..." width="120" height="120">
+                                                <img src="../storage/product/images/{{$product->pUrl}}" alt="..." width="120" height="120">
                                                 <div>
                                                     <span class="fa fa-star checkedStar"></span>
                                                     <span class="fa fa-star checkedStar"></span>
@@ -92,8 +92,6 @@
 
         </div>
     </div>
-
-    @include('links.profileFootLinks')
     @include('links.footLinks')
 </body>
 
