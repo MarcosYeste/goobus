@@ -23,7 +23,7 @@ class CreatePersonsTable extends Migration
             $table->string('description',255)->nullable();
             $table->string('phone')->nullable();
             $table->integer('artcoins')->default(0);
-            $table->integer('money')->default(0); 
+            $table->decimal('money', 10, 8)->default(0); 
             $table->string('avatar')->nullable();
             $table->integer('user_id')->unsigned();
             $table->foreign('user_id')->references('id')->on('users') ->onDelete('cascade');

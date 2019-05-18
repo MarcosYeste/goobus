@@ -25,13 +25,13 @@
                                 <div class="btn-wrapper text-center">
                                     <a href="#" class="btn btn-neutral btn-icon">
                                         <span class="btn-inner--icon">
-                                            <img src="webMedia/img/icons/common/github.svg">
+                                            <img src="https://www.eldiario.es/fotos/Icono-Facebook_EDIIMA20171010_0383_19.jpg">
                                         </span>
-                                        <span class="btn-inner--text">Github</span>
+                                        <span class="btn-inner--text">Facebook</span>
                                     </a>
                                     <a href="#" class="btn btn-neutral btn-icon">
                                         <span class="btn-inner--icon">
-                                            <img src="webMedia/img/icons/common/google.svg">
+                                            <img src="https://yt3.ggpht.com/a/AGF-l7-BBIcC888A2qYc3rB44rST01IEYDG3uzbU_A=s900-mo-c-c0xffffffff-rj-k-no">
                                         </span>
                                         <span class="btn-inner--text">Google</span>
                                     </a>

@@ -123,17 +123,6 @@
                                             </div>
 
                                         </div>
-                                        <div class="col-md-6 pr-md-1">
-                                            <div class="form-group">
-                                                 <label for="exampleInputBenefit">Beneficio del copmprador</label>
-                                                  <select class="form-control" id="exampleInputBenefit" name="pClientBenefit">
-                                                    <option value="0.2">0.2%</option>
-                                                    <option value="0.5">0.5%</option>
-                                                    <option value="1">1%</option>
-                                                </select>
-                                            </div>
-
-                                        </div>
                                     </div>
                                     <div class="row">
                                         <div class="col-md-12 pr-md-1">

@@ -21,21 +21,24 @@ class SingInValidate extends FormRequest
      *
      * @return array
      */
+    
     public function rules()
     {
         return [
-            'nickname' => 'bail|required|min:5|regex:/^\S*$/',
+            'nickname' => 'bail|required|min:5|max:20|regex:/^\S*$/',
             'user_pass' => 'required|regex:/^[a-zA-Z0-9]{6}\S*$/',
         ];
     }
+    
     public function messages()
-{
-    return [
-        'nickname.required' => 'El Nickname es obligatorio.',
-        'nickname.min' => 'El Nickname debe ser de minimo 5 caracteres.',        
-        'nickname.regex' => 'El Nickname no puede contener espacios.',
-        'user_pass.required' => 'La contraseña  es obligatoria',
-        'user_pass.regex' => 'La contraseña  debe ser de minimo 6 caracteres sin espacios',
-    ];
-}
+    {
+        return [
+            'nickname.required' => 'El Nickname es obligatorio.',
+            'nickname.min' => 'El Nickname debe ser de minimo 5 caracteres.',
+            'nickname.max' => 'El Nickname debe ser de máximo 20 caracteres.',   
+            'nickname.regex' => 'El Nickname no puede contener espacios.',
+            'user_pass.required' => 'La contraseña  es obligatoria',
+            'user_pass.regex' => 'La contraseña  debe ser de minimo 6 caracteres sin espacios',
+        ];
+    }
 }

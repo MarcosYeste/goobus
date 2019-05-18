@@ -25,6 +25,7 @@ Route::get('cookies', 'ArtWebController@cookies');
 Route::get('artCoinWeb', 'ArtWebController@artCoinWeb');
 Route::get('ads', 'ArtWebController@ads');
 Route::get('logout', 'ArtWebController@logout');
+Route::get('stadistics', 'ArtWebController@stadistics');
 
 /* RUTAS PERSON  */
 Route::get('profile','PersonController@profile');
@@ -33,6 +34,10 @@ Route::post('register', 'PersonController@store'); // Molaria ponerle un Name pa
 Route::post('update', 'PersonController@update');
 Route::get('login', 'PersonController@login');
 Route::post('login', 'PersonController@sign');// Molaria ponerle un Name para que en la URL no saliera login cuando te manda a la pagina principal
+Route::post('coinWined', 'PersonController@coinWined');
+Route::post('buy{id}','PersonController@buy');
+
+
 
 /* RUTAS PRODUCTS  */ 
 //Route::get('product','ProductController@showMyProducts');

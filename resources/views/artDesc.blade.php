@@ -74,7 +74,9 @@
                                                 <input type="submit" class="btn btn-primary mt-3" value="Eliminar">
                                                 </form>
                                                 @else
-                                                <a href="{{action('ProductController@show', $product->id )}}" class="btn btn-primary mt-3">Comprar</a>
+                                                <form role="form" action="{{action('PersonController@buy', $product->id )}}" method="post">
+                                                <input type="submit" class="btn btn-primary mt-3" value="Comprar">
+                                                </form>
                                                 @endif
                                             </div>
                                         </div>

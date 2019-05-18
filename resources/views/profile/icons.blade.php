@@ -34,21 +34,15 @@
                         </a>
                     </li>
                     <li>
-                        <a href="./notifications.html">
+                        <a href="#">
                             <i class="tim-icons icon-bell-55"></i>
-                            <p>Notifications</p>
+                            <p>Transferencias</p>
                         </a>
                     </li>
                     <li class="active ">
-                        <a href="./user.html">
+                        <a href="{{ URL('stadistics') }}">
                             <i class="tim-icons icon-single-02"></i>
-                            <p>User Profile</p>
-                        </a>
-                    </li>
-                    <li>
-                        <a href="./tables.html">
-                            <i class="tim-icons icon-puzzle-10"></i>
-                            <p>Table List</p>
+                            <p>Estadisticas</p>
                         </a>
                     </li>
                     <li class="active-pro">

@@ -13,6 +13,7 @@ class ArtWebController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
+    //Controla la session y devuelve a un welcome o a otro
     public function index()
     {
         if (Session::has('user') && Session::has('person')) {
@@ -21,44 +22,28 @@ class ArtWebController extends Controller
             
         } else {
             
-            return view('bienvenido');
+            return view('welcome');
         }
-    }   
-   
-    public function contact()
-    {
-        
-        return view('info.contact'); //("bienvenido");
-    }
-    public function privacity()
-    {
-        
-        return view('info.politicaPrivacidad'); //("bienvenido");
-    }
-    public function cookies()
-    {
-        
-        return view('info.politicaCookies'); //("bienvenido");
     }
     
-    
+    //Controla el acceso a la pagina una vez iniciado session
     public function artCoinWeb()
     {
         if (Session::has('user') && Session::has('person')) {
             
             $user   = Session::get('user');
             $person = Session::get('person');
-            return view('landing', compact('user', 'person'));
+            return view('welcomeUser', compact('user', 'person'));
             
         } else {
-            // aqui deberia ir un error de session expirada o algo
+            
             $errorMessage = "";
             return view("login", compact('errorMessage'));
         }
-        
     }
     
-     public function ads()
+    //Da acceso a la pagina de anuncios  
+    public function ads()
     {
         if (Session::has('user') && Session::has('person')) {
             
@@ -71,77 +56,45 @@ class ArtWebController extends Controller
             $errorMessage = "";
             return view("login", compact('errorMessage'));
         }
-        
     }
+    
+    //Da acceso a la pagina de estadisticas  
+    public function stadistics()
+    {
+        if (Session::has('user') && Session::has('person')) {
+            
+            $user   = Session::get('user');
+            $person = Session::get('person');
+            return view('profile.stadistics', compact('user', 'person'));
+            
+        } else {
+            // aqui deberia ir un error de session expirada o algo
+            $errorMessage = "";
+            return view("login", compact('errorMessage'));
+        }
+    }
+    
+    //Contacto
+    public function contact()
+    {
+        return view('info.contact');
+    }
+    
+    //politica de privacidad
+    public function privacity()
+    {
+        return view('info.politicaPrivacidad');
+    }
+    
+    //cookies
+    public function cookies()
+    {
+        return view('info.politicaCookies');
+    }
+    //Cerrar Session
     public function logout()
     {
         Session::flush();
-        return view('bienvenido');
-    }
-    
-    /**
-     * Show the form for creating a new resource.
-     *
-     * @return \Illuminate\Http\Response
-     */
-    public function create()
-    {
-        Log::debug('CREATE');
-    }
-    
-    /**
-     * Store a newly created resource in storage.
-     *
-     * @param  \Illuminate\Http\Request  $request
-     * @return \Illuminate\Http\Response
-     */
-    public function store(Request $request)
-    {
-        Log::debug('STORE');
-    }
-    
-    /**
-     * Display the specified resource.
-     *
-     * @param  int  $id
-     * @return \Illuminate\Http\Response
-     */
-    public function show($id)
-    {
-        Log::debug('SHOW');
-    }
-    
-    /**
-     * Show the form for editing the specified resource.
-     *
-     * @param  int  $id
-     * @return \Illuminate\Http\Response
-     */
-    public function edit($id)
-    {
-        Log::debug('EDIT');
-    }
-    
-    /**
-     * Update the specified resource in storage.
-     *
-     * @param  \Illuminate\Http\Request  $request
-     * @param  int  $id
-     * @return \Illuminate\Http\Response
-     */
-    public function update(Request $request, $id)
-    {
-        //
-    }
-    
-    /**
-     * Remove the specified resource from storage.
-     *
-     * @param  int  $id
-     * @return \Illuminate\Http\Response
-     */
-    public function destroy($id)
-    {
-        //
+        return view('welcome');
     }
 }

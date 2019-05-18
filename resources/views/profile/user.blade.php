@@ -36,27 +36,15 @@
                         </a>
                     </li>
                     <li>
-                        <a href="./notifications.html">
+                        <a href="#">
                             <i class="tim-icons icon-bell-55"></i>
-                            <p>Notifications</p>
+                            <p>Transferencias</p>
                         </a>
                     </li>
                     <li class="active ">
-                        <a href="./user.html">
+                        <a href="{{ URL('stadistics') }}">
                             <i class="tim-icons icon-single-02"></i>
-                            <p>User Profile</p>
-                        </a>
-                    </li>
-                    <li>
-                        <a href="./tables.html">
-                            <i class="tim-icons icon-puzzle-10"></i>
-                            <p>Table List</p>
-                        </a>
-                    </li>
-                    <li class="active-pro">
-                        <a href="">
-                            <i class=""></i>
-                            <p></p>
+                            <p>Estadisticas</p>
                         </a>
                     </li>
                 </ul>
@@ -173,7 +161,7 @@
                                         <div class="col-md-12 pr-md-1">
                                             <div class="form-group">
                                                 <label>Sobre mi</label>
-                                                <textarea rows="4" cols="80" class="form-control" placeholder="Here can be your description" name="description" value="{{$person['description']}}"></textarea>
+                                                <textarea rows="4" cols="80" class="form-control" placeholder="Here can be your description" name="description" value="{{$person['description']}}" maxlength="255"></textarea>
                                             </div>
                                         </div>
                                     </div>

@@ -25,13 +25,13 @@
                                 <div class="text-center">
                                     <a href="#" class="btn btn-neutral btn-icon mr-4">
                                         <span class="btn-inner--icon">
-                                            <img src="webMedia/img/icons/common/github.svg">
+                                            <img src="https://www.eldiario.es/fotos/Icono-Facebook_EDIIMA20171010_0383_19.jpg">
                                         </span>
-                                        <span class="btn-inner--text">Github</span>
+                                        <span class="btn-inner--text">Facebook</span>
                                     </a>
                                     <a href="#" class="btn btn-neutral btn-icon">
                                         <span class="btn-inner--icon">
-                                            <img src="webMedia/img/icons/common/google.svg">
+                                            <img src="https://yt3.ggpht.com/a/AGF-l7-BBIcC888A2qYc3rB44rST01IEYDG3uzbU_A=s900-mo-c-c0xffffffff-rj-k-no">
                                         </span>
                                         <span class="btn-inner--text">Google</span>
                                     </a>
@@ -42,45 +42,45 @@
                                     <small>Or sign up with credentials</small>
                                 </div>
                                 <form class="form-inline " role="form" action="{{action('PersonController@store')}}" method="post">
-                                     @csrf
+                                    @csrf
                                     <div class="form-group">
                                         <div class="input-group input-group-alternative mb-3">
                                             <div class="input-group-prepend">
                                                 <span class="input-group-text"><i class="ni ni-hat-3"></i></span>
                                             </div>
-                                            <input class="form-control" placeholder="Nickname" name="nickname" type="text" >                 
-                                        </div> 
+                                            <input class="form-control" placeholder="Nickname" name="nickname" type="text">
+                                        </div>
                                     </div>
-                                     <span class="text-danger"> {{$errors->first('nickname')}}</span>
+                                    <span class="text-danger"> {{$errors->first('nickname')}} </span>
                                     <div class="form-group">
                                         <div class="input-group input-group-alternative mb-3">
                                             <div class="input-group-prepend">
                                                 <span class="input-group-text"><i class="ni ni-email-83"></i></span>
                                             </div>
-                                            <input class="form-control" placeholder="Email" name="email" type="email" >
+                                            <input class="form-control" placeholder="Email" name="email" type="email">
                                         </div>
                                     </div>
-                                    
-                                        <span class="text-danger"> {{$errors->first('email')}}</span>
+
+                                    <span class="text-danger"> {{$errors->first('email')}}</span>
                                     <div class="form-group">
                                         <div class="input-group input-group-alternative">
                                             <div class="input-group-prepend">
                                                 <span class="input-group-text"><i class="ni ni-lock-circle-open"></i></span>
                                             </div>
-                                         
-                                           
-                                            <input class="form-control" placeholder="Password" name="user_pass" type="password" >
+
+
+                                            <input class="form-control" placeholder="Password" name="user_pass" type="password">
                                         </div>
-                                           
+
                                     </div>
                                     <span class="text-danger"> {{$errors->first('user_pass')}}</span>
                                     <div class="row my-4">
                                         <div class="col-12">
                                             <div class="custom-control custom-control-alternative custom-checkbox">
-                                                <input class="custom-control-input" id="customCheckRegister" type="checkbox">
+                                                <input class="custom-control-input" id="customCheckRegister" type="checkbox" required>
                                                 <label class="custom-control-label" for="customCheckRegister">
                                                     <span>I agree with the
-                                                        <a href="#">Privacy Policy</a>
+                                                        <a href="{{ URL('privacidad') }}">Privacy Policy</a>
                                                     </span>
                                                 </label>
                                             </div>

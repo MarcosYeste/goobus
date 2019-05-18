@@ -6,6 +6,9 @@ use Illuminate\Http\Request;
 use goobus\Http\Requests\RegisterValidate;
 use goobus\Http\Requests\SingInValidate;
 use goobus\Http\Requests\userUpdateValidate;
+use goobus\Services\UserService;
+use goobus\Services\BuyService;
+use goobus\Services\ProductService;
 use Log;
 use Session;
 use Storage;
@@ -18,36 +21,31 @@ class PersonController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-    public function index()
-    {
-        return redirect('artCoinWeb');
-    }
-    
+    //Redirecciona a artcoinweb en ArtWebController
     public function login()
     {
         return redirect('artCoinWeb');
         
     }
     
+    //Controla el accedo al perfil de usuario
     public function profile()
     {
-         if (Session::has('user') && Session::has('person')) {
-             
+        if (Session::has('user') && Session::has('person')) {
+            
             $user   = Session::get('user');
-            $person = Session::get('person');            
+            $person = Session::get('person');
             return view('profile.user', compact('user', 'person'));
-             
-         }else{
-             
-             return redirect('artCoinWeb');
-         }
+            
+        } else {
+            
+            return redirect('artCoinWeb');
+        }
     }
     
-    public function sign(SingInValidate $request) // ESTE METODO ES PARA COMPROBAR EL USUARIO EN EL LOGIN
+    //Verifica formulario y inicia session
+    public function sign(SingInValidate $request)
     {
-        
-        
-        
         if (!$request->validated()) { // si no pasa la validacion vuelve al login
             
             return view("login");
@@ -59,7 +57,7 @@ class PersonController extends Controller
             
             try {
                 
-                $user          = \goobus\User::where('nickname', $request->input('nickname'))->first();
+                $user          = UserService::findUserByNickname($request->input('nickname'));
                 $inputPassword = $request->input('user_pass');
                 
                 if (Hash::check($inputPassword, $user->user_pass)) {
@@ -67,6 +65,7 @@ class PersonController extends Controller
                     $userExist = true;
                     
                 } else {
+                    
                     $errorMessage = "Contraseña incorrecta";
                 }
                 
@@ -78,34 +77,77 @@ class PersonController extends Controller
             
             if ($userExist) { // si existe el usuario se guarda en session
                 
-                $person = \goobus\Person::where('user_id', $user->id)->first();
+                $person = UserService::findPersonWhereColumn('user_id', $user->id);
                 $request->session()->put('user', $user);
                 $request->session()->put('person', $person);
                 
-                return redirect('artCoinWeb'); // control de artWebController
+                return redirect('artCoinWeb');
                 
             } else {
                 
-                return view('login', compact('errorMessage')); //("bienvenido");
-            }            
-        }  
+                return view('login', compact('errorMessage'));
+            }
+        }
     }
+    
+    //Controla cuando el usuario gana Coins
+    public function coinWined(Request $request)
+    {
+        if (Session::has('user') && Session::has('person')) {
+            
+            $person = Session::get('person');
+            
+            UserService::updateCoins($person, $request);
+            
+            return redirect('ads');
+            
+        } else {
+            
+            return view("ads");
+        }
+    }
+    
+    //Controla cuando el usuario compra arte
+    public function buy($id)
+    {
+        $product = ProductService::findProductByID($id);
+        
+        //Usuarios
+        $person  = Session::get('person');
+        $shopper = UserService::findPersonByID($person->id);
+        
+        if (($shopper->artcoins - $product->pPrice) > 0) { //si coins compra
+            
+            $vendor = UserService::findPersonWhereColumn('id', $product->persona_id);
+            $person = BuyService::buy($product, $person, $shopper, $vendor);
+            Session::put('person', $person);
+            
+            return redirect('art');
+            
+        } else {
+            
+            return redirect('art');
+        }
+    }
+    
     /**
      * Show the form for creating a new resource.
      *
      * @return \Illuminate\Http\Response
      */
+    
+    //Controla el acceso a regitro
     public function create()
     {
-         if (Session::has('user') && Session::has('person')) {
-             
-             return redirect('artCoinWeb');
-             
-         }else{
-             
-             return view("register");
-         }        
-    }    
+        if (Session::has('user') && Session::has('person')) {
+            
+            return redirect('artCoinWeb');
+            
+        } else {
+            
+            return view("register");
+        }
+    }
     
     /**
      * Store a newly created resource in storage.
@@ -113,54 +155,31 @@ class PersonController extends Controller
      * @param \Illuminate\Http\Request $request
      * @return \Illuminate\Http\Response
      */
+    
+    //Verifica formulario y guarda usuario en BBDD
     public function store(RegisterValidate $request)
     {
+        $errorMessage = "";
+        
         if ($request->validated()) {
             
-            $user            = new \goobus\User;
-            $user->nickname  = $request->input('nickname');
-            $user->email     = $request->input('email');
-            $user->user_pass = Hash::make($request->input('user_pass'));
-            $user->save();
+            $user = UserService::findUserByNickname($request->input('nickname'));
             
-            $person          = new \goobus\Person;
-            $person->user_id = $user->id;
-            $person->save();
-            
-            $errorMessage = "";
-            return view("login", compact('errorMessage'));
+            if ($user === null) {
+                
+                UserService::saveUser($request);
+                return view("login", compact('errorMessage'));
+                
+            } else {
+                
+                $errorMessage = "Nickname no esta disponible";
+                return view("register", compact('errorMessage'));
+            }
             
         } else {
             
-            return view("register");
+            return view("register", compact('errorMessage'));
         }
-        
-    }
-    
-    /**
-     * Display the specified resource.
-     *
-     * @param int $id
-     * @return \Illuminate\Http\Response
-     */
-    public function show($id)
-    {
-        /*
-        $person = \App\Person::find($id);
-        return view('edit',compact('person','id'));
-        */
-    }
-    
-    /**
-     * Show the form for editing the specified resource.
-     *
-     * @param int $id
-     * @return \Illuminate\Http\Response
-     */
-    public function edit($id)
-    {
-        $person = \goobus\Person::find($id);
-        return view('profile', compact('person', 'id'));
     }
     
     /**
@@ -170,40 +189,17 @@ class PersonController extends Controller
      * @param int $id
      * @return \Illuminate\Http\Response
      */
+    
+    //Update del usuario
     public function update(Request $request)
     {
+        $user   = Session::get('user');
+        $person = Session::get('person');
         
-        $user = Session::get('user');
-        $user = \goobus\User::find($user->id);
+        $user   = UserService::findUserByID($user->id);
+        $person = UserService::findPersonByID($person->id);
         
-        $user->nickname   = $request->input('nickname');
-        $user->email      = $request->input('email');
-       // $user->user_pass  = $request->input('user_pass');
-        $user->lastUpdate = date('Y-m-d H:i:s');
-        $user->save();
-        
-        $person              = Session::get('person');
-        $person              = \goobus\Person::find($person->id);
-        $person->name        = $request->input('name');
-        $person->lastname    = $request->input('lastname');
-        $person->address     = $request->input('address');
-        $person->country     = $request->input('country');
-        $person->cp          = $request->input('cp');
-        $person->phone       = $request->input('phone');
-        $person->description = $request->input('description');
-        
-        if ($request->file('avatar') != "") { //Si esta vacio no genero ni guardo foto
-            
-            $image          = $request->file('avatar');
-            $imagedesc      = "".$request->input('nickname'). "_".$image->getClientOriginalName();            
-            $person->avatar = $imagedesc;
-            Storage::disk('avatar')->putFileAs('images', $image, $imagedesc);
-            
-        }
-        
-        $person->save();
-        Session::put('user', $user);
-        Session::put('person', $person);
+        UserService::updateUser($user, $person, $request);
         
         return redirect('profile');
     }

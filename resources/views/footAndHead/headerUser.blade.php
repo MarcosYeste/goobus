@@ -67,22 +67,12 @@
                 <div class="d-flex justify-content-around headbodywidth">
                     <ul class="navbar-nav align-items-lg-center">
                         <li class="nav-item">
-                            <a href="#" class="media d-flex align-items-center">
-                                <div class="media-body ml-3">
-                                    <h5 class="heading myBlueGold mb-md-1 myBlueGold">{{$user['nickname']}}</h5>
-                                </div>
-                                <div class="icon icon-shape myBlueGold">
-                                    <i class="far fa-hand-point-left"></i>
-                                </div>
-                            </a>
-                        </li>
-                        <li class="nav-item">
                             <a href="#" class="media d-flex align-items-center ">
                                 <div class="media-body ml-3">
                                     <h5 class="heading myBlueGold mb-md-1 myBlueGold">{{$person['artcoins']}}</h5>
                                 </div>
                                 <div class="icon icon-shape rounded-circle myBlueGold">
-                                    <i class="fas fa-piggy-bank"></i>
+                                     <i class="fas fa-coins "></i>
                                 </div>
                             </a>
                         </li>
@@ -92,7 +82,7 @@
                                     <h5 class="heading myBlueGold mb-md-1 myBlueGold">{{$person['money']}}</h5>
                                 </div>
                                 <div class="icon icon-shape myBlueGold">
-                                    <i class="fas fa-euro-sign"></i>
+                                    <i class="fas fa-piggy-bank"></i>
                                 </div>
                             </a>
                         </li>
@@ -116,13 +106,13 @@
                                     <i class="fa fa-user"></i>
                                 </div>
                                 <div class="media-body ml-3">
-                                    <h5 class="heading myBlueGold mb-md-1">Perfil</h5>
+                                    <h5 class="heading myBlueGold mb-md-1">{{$user['nickname']}}</h5>
                                 </div>
                             </a>
                             <div class="dropdown-menu mg-top">
                                 <a href="{{ URL('profile') }}" class="dropdown-item">configurar mi perfil</a>
                                 <a href="{{ URL('myArt') }}" class="dropdown-item">Mis productos</a>
-                                <a href="../examples/login.html" class="dropdown-item">Transferencias</a>
+                                <a href="#" class="dropdown-item">Transferencias</a>
                                 <a href="{{ URL('logout') }}" class="dropdown-item">Logout</a>
                             </div>
                         </li>
